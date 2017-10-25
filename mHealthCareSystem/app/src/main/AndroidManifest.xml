@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.learning.jimmy.mhealthcaresystem">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ActivityHomePage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Patient_home" />
+        <activity android:name=".Doctor_home" />
+        <activity android:name=".Patient_login" />
+        <activity android:name=".Patient_register" />
+        <activity android:name=".Patient_health_entry" />
+        <activity android:name=".Patient_log_home" />
+        <activity android:name=".PatientDetails" />
+        <activity android:name=".Doctor_login" />
+        <activity android:name=".Doctor_register" />
+        <activity android:name=".Doctor_log_home" />
+        <activity android:name=".Myaccount" />
+        <activity android:name=".HealthDetails" />
+        <activity android:name=".DoctorFeedback" />
+        <activity android:name=".Ambulance" />
+        <activity android:name=".Doctor_advice"></activity>
+    </application>
+
+</manifest>
