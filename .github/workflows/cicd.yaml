@@ -28,6 +28,7 @@ jobs:
 
       - name: Build Artifact
         run: 
+          chmod +x ./gradlew
           ./gradlew assembleDebug --stacktrace
 
       - name: Upload artifacts to runner
