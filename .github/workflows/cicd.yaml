@@ -29,7 +29,7 @@ jobs:
       - name: Build Artifact
         run: |
           chmod +x ./gradlew
-          ./gradlew assembleRelease
+          ./gradlew assembleRelease --stacktrace
 
       - name: Upload artifacts to runner
         uses: actions/upload-artifact@v4
