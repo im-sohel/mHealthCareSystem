@@ -27,7 +27,7 @@ jobs:
         uses: android-actions/setup-android@v2.0.10
 
       - name: Build Artifact
-        run: 
+        run: |
           chmod +x ./gradlew
           ./gradlew assembleRelease
 
