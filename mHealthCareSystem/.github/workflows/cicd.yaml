@@ -1,0 +1,41 @@
+name: Android CICD Workflow
+on: 
+  push:
+    branches:
+      - 'feature*'
+      - 'develop'
+      - 'release*'
+      - '!main'
+    tags:
+      - 'release-*'
+  workflow_dispatch:
+
+  
+jobs:
+  Build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout code ${{ github.ref }}
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with: 
+          java-version: 17
+          distribution: 'adopt'
+      
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2.0.10
+
+      - name: Build Artifact
+        run: 
+          ./gradlew assembleDebug --stacktrace
+
+      - name: Upload artifacts
+        uses: actions/upload-artifacts@v3
+        with: 
+          name: release-artifact
+          path: app/build/outputs/apk/
+
+
+
